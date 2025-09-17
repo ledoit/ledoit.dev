@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { User } from 'lucide-react'
 
 interface ProfileImageProps {
   src?: string

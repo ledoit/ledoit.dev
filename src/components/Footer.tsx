@@ -1,4 +1,3 @@
-import React from 'react'
 import { motion } from 'framer-motion'
 import { Heart, Github, Linkedin, Mail } from 'lucide-react'
 
@@ -51,7 +50,7 @@ const Footer = () => {
             viewport={{ once: true }}
             className="flex justify-center space-x-4"
           >
-            {socialLinks.map((social, index) => (
+            {socialLinks.map((social) => (
               <motion.a
                 key={social.label}
                 whileHover={{ scale: 1.1, y: -2 }}
