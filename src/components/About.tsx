@@ -38,7 +38,7 @@ const About = () => {
             <p className="text-lg text-dark-600 dark:text-dark-300 leading-relaxed">
               I thrive on solving complex problems and turning innovative ideas into 
               reality. When I'm not coding, you'll find me exploring new technologies, 
-              contributing to open-source projects, or mentoring fellow developers.
+              building innovative side projects, or mentoring fellow developers.
             </p>
           </motion.div>
 
