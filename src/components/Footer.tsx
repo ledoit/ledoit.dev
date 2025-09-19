@@ -35,7 +35,7 @@ const Footer = () => {
             className="text-center md:text-left"
           >
             <h3 className="text-2xl font-bold mb-2 gradient-text">
-              Phil Ledoit
+              Philippe Ledoit
             </h3>
             <p className="text-dark-300 mb-4">
               Full-Stack Developer crafting modern web experiences
@@ -75,7 +75,7 @@ const Footer = () => {
             className="text-center md:text-right text-dark-300"
           >
             <p className="flex items-center justify-center md:justify-end">
-              © {currentYear} Phil Ledoit. All rights reserved.
+              © {currentYear} Philippe Ledoit. All rights reserved.
             </p>
             <p className="flex items-center justify-center md:justify-end mt-2 text-sm">
               Built with <Heart className="w-4 h-4 text-red-500 mx-1" /> and modern web technologies

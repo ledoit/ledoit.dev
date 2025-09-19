@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Mail, Phone, MapPin, Github, Linkedin, Twitter, Send } from 'lucide-react'
+import { Mail, Phone, MapPin, Github, Linkedin, Send } from 'lucide-react'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -61,11 +61,6 @@ const Contact = () => {
       icon: Linkedin,
       href: 'https://linkedin.com/in/ledoit',
       label: 'LinkedIn'
-    },
-    {
-      icon: Twitter,
-      href: 'https://twitter.com/philledoit',
-      label: 'Twitter'
     }
   ]
 
