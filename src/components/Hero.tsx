@@ -111,7 +111,7 @@ const Hero = () => {
               className="text-hero text-dark-900 dark:text-white mb-6"
             >
               Hi, I'm{' '}
-              <span className="gradient-text">Phil Ledoit</span>
+              <span className="gradient-text">Philippe Ledoit</span>
             </motion.h1>
 
             <motion.div
@@ -221,13 +221,13 @@ const Hero = () => {
               <div className="text-center">
         <ProfileImage
           src="/3q.jpg"
-          alt="Phil Ledoit - Main Profile"
+          alt="Philippe Ledoit - Main Profile"
           fallbackText="PL"
           size="lg"
         />
                 
                 <h3 className="text-2xl font-bold text-dark-900 dark:text-white mb-2">
-                  Phil Ledoit
+                  Philippe Ledoit
                 </h3>
                 
                 <p className="text-primary-600 dark:text-primary-400 mb-4">
