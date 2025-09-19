@@ -86,7 +86,7 @@ const Hero = () => {
           className="absolute bottom-20 right-20 w-24 h-24 rounded-full opacity-20 overflow-hidden"
         >
           <ProfileImage
-            src="/3q.jpg"
+            src="/cool.jpg"
             alt="Background Profile 2"
             fallbackText=""
             size="md"
@@ -220,7 +220,7 @@ const Hero = () => {
             >
               <div className="text-center">
         <ProfileImage
-          src="/cool.jpg"
+          src="/3q.jpg"
           alt="Phil Ledoit - Main Profile"
           fallbackText="PL"
           size="lg"
