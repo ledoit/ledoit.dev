@@ -3,63 +3,206 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Code Hungry: Phil Ledoit</title>
+    <meta name="description" content="Philippe Ledoit - Software Developer specializing in Full-Stack Development, Data Engineering, and Web Applications">
+    <meta name="keywords" content="Philippe Ledoit, software developer, full-stack developer, portfolio, Go, Angular, Rust, Python, web development">
+    <meta name="author" content="Philippe Ledoit">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Philippe Ledoit - Software Developer Portfolio">
+    <meta property="og:description" content="Full-stack developer specializing in Go, Angular, Rust, and modern web technologies">
+    <meta property="og:url" content="https://ledoit.dev">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:title" content="Philippe Ledoit - Software Developer">
+    <meta property="twitter:description" content="Full-stack developer | Go, Angular, Rust, Python">
+    
+    <title>Philippe Ledoit - Software Developer Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="header">
-        <div class="name">
-            Philippe<br>Ledoit
-        </div> 
-        <span>
-            <a href="https://linkedin.com/in/ledoit">LinkedIn</a>/<a href="https://github.com/ledoit">GitHub</a>
-        </span>
-        <a>Contact</a>
-        <a>Story</a>
-        <div class="logo">
-            <span>Code</span><span>Hungry</span>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-content">
+            <div class="logo">
+                <span>Code</span><span>Hungry</span>
+            </div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
         </div>
-    </div>
-    <div class="main">
-        <div class="lcol">
-            <span>Resume (US)</span>
-            <span>CV (EU)</span>
-        </div>
-        <div class="mcol">
-            <div class="col1">
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-image">
                 <img src="statue.png" alt="Philippe Ledoit" class="statue">
             </div>
-            <div class="col2">
-                <span>Software</span>
-                <span>Data</span>
-                <span>Finance</span>
+            <div class="hero-text">
+                <h1>Philippe<br>Ledoit</h1>
+                <p class="subtitle">Software Developer</p>
+                <p class="description">Building full-stack applications with Go, Angular, Rust, and modern web technologies</p>
+                <div class="hero-links">
+                    <a href="https://github.com/ledoit" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <span>•</span>
+                    <a href="https://linkedin.com/in/ledoit" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <span>•</span>
+                    <a href="resume-us.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+                    <span>•</span>
+                    <a href="cv-eu.pdf" target="_blank" rel="noopener noreferrer">CV</a>
+                </div>
             </div>
         </div>
-        <div class="rcol">
-            <span>Products</span>
-            <span>Services</span>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <h2>About</h2>
+        <div class="about-content">
+            <p>
+                I'm a software developer with a passion for building efficient, scalable applications. 
+                I graduated from Boston University with a B.A. in Computer Science and Statistics, 
+                where I focused on databases, algorithms, functional programming, and systems design.
+            </p>
+            <p>
+                I enjoy working across the full stack—from backend APIs in Go to frontend interfaces 
+                in Angular, and even diving into systems programming with Rust. My experience ranges 
+                from custom web development to low-code platform engineering and automation.
+            </p>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Languages</h3>
+                    <p>Go, JavaScript/TypeScript, Rust, Python, PHP, SQL</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Frameworks & Tools</h3>
+                    <p>Angular, Tauri, Flask, WordPress, PostgreSQL, Railway, Git</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Languages</h3>
+                    <p>French (Native), Mandarin Chinese (Conversational)</p>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="footer">
-        <span>Dublin</span>
-        ∙
-        <span>Boston</span>
-        ∙
-        <span>New York</span>
-        ∙
-        <span>Paris</span>
-        ∙
-        <span>Lausanne</span>
-        ∙
-        <span>Bangkok</span>
-        ∙
-        <span>Taipei</span>
-        ∙
-        <span>Munich</span>
-        ∙
-        <span>London</span>
-    </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <h2>Experience</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">Sep 2024 – Dec 2024</div>
+                <div class="timeline-content">
+                    <h3>Junior Developer</h3>
+                    <h4>Schwabinger IT (Software House)</h4>
+                    <ul>
+                        <li>Delivered 6 custom websites to industrial clients and professionals with 1-week turnarounds each</li>
+                        <li>Rewrote four PHP WordPress plugins to meet client requests and streamline performance</li>
+                        <li>Webscraped and repurposed 100,000+ records for clothing supplier of Austrian police</li>
+                        <li>Composed 30-task Kanban board with staff assignments, deadlines, and dependency timeline</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">Jun 2022 – Aug 2022</div>
+                <div class="timeline-content">
+                    <h3>Software Engineering Intern</h3>
+                    <h4>Shell Techworks</h4>
+                    <ul>
+                        <li>Added three logic transformation nodes to low-code refinery plant safety automation platform</li>
+                        <li>Enriched oil well visualizer with 10 widgets and erected guardrails for geologist data edit safety</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">Dec 2019 – Nov 2020</div>
+                <div class="timeline-content">
+                    <h3>Airman Basic (Cabler)</h3>
+                    <h4>French Air Force</h4>
+                    <ul>
+                        <li>Deployed 200-peripheral pipeline and upkept telecom/intranet for 3500 and 2300 person airbases</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>MovieMash</h3>
+                <p class="project-tech">Go / Angular / PostgreSQL / SCSS / Railway</p>
+                <p>Full-stack application for pairwise movie comparison with voting and leaderboards. Features normalized database schema, REST API with CORS, and external API integration.</p>
+                <div class="project-links">
+                    <a href="https://github.com/ledoit/moviemash" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://moviemash.ledoit.dev" target="_blank" rel="noopener noreferrer">Live Site</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3>Matrix Maze</h3>
+                <p class="project-tech">Rust / Tauri / JavaScript</p>
+                <p>First-person 3D ASCII maze escape desktop game with raycasting engine and procedural maze generation. Built with Rust for performance and Tauri for cross-platform desktop deployment.</p>
+                <div class="project-links">
+                    <a href="https://github.com/ledoit/matrix-maze" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3>BU Health Portal Autofill</h3>
+                <p class="project-tech">Flask / Python / Selenium / Tkinter</p>
+                <p>Web automation tool that fast-tracks users through health portal workflows. Reduced 17 clicks daily on symptomatic checks and 23 clicks weekly on Covid test bookings, saving users 95% of time.</p>
+                <div class="project-links">
+                    <a href="https://github.com/ledoit/bu-health-autofill" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section">
+        <h2>Education</h2>
+        <div class="education-content">
+            <h3>Boston University</h3>
+            <p class="degree">B.A. in Computer Science and Statistics</p>
+            <p class="date">Sep 2018 – May 2024</p>
+            <p class="courses">Key Courses: Databases, Algorithms, Functional Programming, Operating Systems, Networks</p>
+            <p class="activities">Treasurer of BU Innovation Lab Design Space (BUILDS) and ΥΠE Honors Society</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <h2>Contact</h2>
+        <div class="contact-content">
+            <p>Let's connect! I'm always interested in discussing new projects and opportunities.</p>
+            <div class="contact-links">
+                <a href="https://github.com/ledoit" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <span>•</span>
+                <a href="https://linkedin.com/in/ledoit" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <span>•</span>
+                <a href="mailto:philippe@ledoit.dev">Email</a>
+            </div>
+            <div class="locations">
+                <span>Dublin</span> • <span>Boston</span> • <span>New York</span> • <span>Paris</span> • 
+                <span>Lausanne</span> • <span>Bangkok</span> • <span>Taipei</span> • <span>Munich</span> • <span>London</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Philippe Ledoit. All rights reserved.</p>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
-
