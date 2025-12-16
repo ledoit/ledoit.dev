@@ -2,7 +2,7 @@
 *.pdf
 
 # Large image files
-statue.png
+# statue.png - needed for portfolio
 *.png
 *.jpg
 *.jpeg
