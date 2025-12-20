@@ -1,0 +1,866 @@
+// ============================================================================
+// Premium Typography & Color System
+// ============================================================================
+
+// Elegant Font Stack
+$font-serif: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
+$font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+$font-mono: 'JetBrains Mono', 'SF Mono', Monaco, 'Cascadia Code', monospace;
+
+// Premium Color Palette - Light Theme
+$color-cream: #faf9f6;
+$color-ivory: #ffffff;
+$color-charcoal: #1a1a1a;
+$color-slate: #2d3748;
+$color-graphite: #4a5568;
+$color-silver: #718096;
+$color-platinum: #a0aec0;
+$color-gold: #d4af37;
+$color-gold-light: #f4e4bc;
+$color-navy: #1e3a5f;
+$color-navy-dark: #0f1f33;
+$color-indigo: #4c51bf;
+$color-indigo-light: #667eea;
+$color-border: #e2e8f0;
+$color-shadow-soft: rgba(0, 0, 0, 0.04);
+$color-shadow-medium: rgba(0, 0, 0, 0.08);
+$color-shadow-strong: rgba(0, 0, 0, 0.12);
+
+// Premium Color Palette - Dark Theme
+$color-ebony: #0a0e1a;
+$color-charcoal-dark: #1a1f2e;
+$color-slate-dark: #2d3748;
+$color-graphite-dark: #4a5568;
+$color-platinum-dark: #cbd5e0;
+$color-gold-dark: #f4d03f;
+$color-navy-dark-bg: #0f1f33;
+$color-indigo-dark: #667eea;
+$color-border-dark: #2d3748;
+
+// Layout
+$max-width: 1400px;
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 1.5rem;
+$spacing-lg: 2.5rem;
+$spacing-xl: 4rem;
+$spacing-2xl: 6rem;
+$spacing-3xl: 8rem;
+
+$border-radius-sm: 0.375rem;
+$border-radius-md: 0.5rem;
+$border-radius-lg: 0.75rem;
+
+$transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-elegant: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+// Breakpoints
+$breakpoint-sm: 640px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
+$breakpoint-2xl: 1536px;
+
+// ============================================================================
+// Mixins
+// ============================================================================
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == sm {
+    @media (min-width: $breakpoint-sm) { @content; }
+  }
+  @else if $breakpoint == md {
+    @media (min-width: $breakpoint-md) { @content; }
+  }
+  @else if $breakpoint == lg {
+    @media (min-width: $breakpoint-lg) { @content; }
+  }
+  @else if $breakpoint == xl {
+    @media (min-width: $breakpoint-xl) { @content; }
+  }
+  @else if $breakpoint == 2xl {
+    @media (min-width: $breakpoint-2xl) { @content; }
+  }
+}
+
+@mixin elegant-card {
+  background: $color-ivory;
+  border-radius: $border-radius-lg;
+  padding: $spacing-lg;
+  box-shadow: 0 4px 20px $color-shadow-soft;
+  border: 1px solid $color-border;
+  transition: all $transition-smooth;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px $color-shadow-medium;
+  }
+}
+
+@mixin section-spacing {
+  padding: $spacing-3xl $spacing-md;
+  
+  @include respond-to(md) {
+    padding: $spacing-3xl $spacing-xl;
+  }
+  
+  @include respond-to(lg) {
+    padding: $spacing-3xl * 1.5 $spacing-xl;
+  }
+}
+
+// ============================================================================
+// Reset & Base Styles
+// ============================================================================
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: $font-sans;
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: $color-cream;
+  color: $color-charcoal;
+  min-height: 100vh;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+// ============================================================================
+// Typography
+// ============================================================================
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: $color-charcoal;
+}
+
+p {
+  line-height: 1.8;
+  color: $color-graphite;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: $transition-fast;
+}
+
+// ============================================================================
+// Layout Components
+// ============================================================================
+
+.portfolio {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  width: 100%;
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+
+  @include respond-to(md) {
+    padding: 0 $spacing-xl;
+  }
+  
+  @include respond-to(xl) {
+    padding: 0 $spacing-2xl;
+  }
+}
+
+// ============================================================================
+// Navigation
+// ============================================================================
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(250, 249, 246, 0.85);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+  padding: $spacing-md 0;
+  transition: all $transition-smooth;
+
+  @media (prefers-color-scheme: dark) {
+    background: rgba(10, 14, 26, 0.85);
+    border-bottom-color: rgba(45, 55, 72, 0.8);
+  }
+
+  &__container {
+    @extend .container;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    font-family: $font-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $color-charcoal;
+    text-decoration: none;
+    letter-spacing: -0.02em;
+    transition: $transition-fast;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, $color-gold, $color-indigo);
+      transition: width $transition-smooth;
+    }
+
+    &:hover {
+      color: $color-indigo;
+      
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+
+  &__links {
+    display: flex;
+    gap: $spacing-xl;
+    align-items: center;
+
+    @include respond-to(md) {
+      gap: $spacing-xl * 1.5;
+    }
+
+    a {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: $color-graphite;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      position: relative;
+      padding: $spacing-xs 0;
+
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background: $color-gold;
+        transition: width $transition-smooth;
+      }
+
+      &:hover {
+        color: $color-indigo;
+        
+        &::before {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+// ============================================================================
+// Hero Section
+// ============================================================================
+
+.hero {
+  @include section-spacing;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, $color-cream 0%, rgba(250, 249, 246, 0.5) 50%, $color-cream 100%);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(102, 126, 234, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.06) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    background: linear-gradient(135deg, $color-ebony 0%, rgba(15, 31, 51, 0.5) 50%, $color-ebony 100%);
+  }
+
+  &__content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: $spacing-lg;
+    color: $color-charcoal;
+    background: linear-gradient(135deg, $color-charcoal 0%, $color-indigo 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    @include respond-to(md) {
+      font-size: 4rem;
+    }
+    
+    @include respond-to(lg) {
+      font-size: 5rem;
+    }
+  }
+
+  &__subtitle {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: $color-graphite;
+    margin-bottom: $spacing-xl;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 400;
+
+    @include respond-to(md) {
+      font-size: 1.25rem;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: $spacing-md;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+// ============================================================================
+// Buttons
+// ============================================================================
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-md $spacing-xl;
+  border-radius: $border-radius-md;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all $transition-smooth;
+  border: none;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+
+  &--primary {
+    background: linear-gradient(135deg, $color-indigo 0%, $color-indigo-light 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(102, 126, 234, 0.4);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+
+  &--secondary {
+    background: transparent;
+    color: $color-indigo;
+    border: 2px solid $color-indigo;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, $color-indigo 0%, $color-indigo-light 100%);
+      transition: left $transition-smooth;
+      z-index: -1;
+    }
+
+    &:hover {
+      color: white;
+      transform: translateY(-2px);
+      border-color: $color-indigo-light;
+      
+      &::before {
+        left: 0;
+      }
+    }
+  }
+}
+
+// ============================================================================
+// Section Styles
+// ============================================================================
+
+section {
+  @include section-spacing;
+}
+
+.section__title {
+  font-family: $font-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: $spacing-2xl;
+  text-align: center;
+  color: $color-charcoal;
+  letter-spacing: -0.03em;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+
+  @include respond-to(md) {
+    font-size: 3.5rem;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -$spacing-md;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, $color-gold, $color-indigo);
+    border-radius: 2px;
+  }
+}
+
+// ============================================================================
+// About Section
+// ============================================================================
+
+.about {
+  background: $color-ivory;
+  position: relative;
+
+  &__content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  &__text {
+    font-size: 1.125rem;
+    line-height: 1.9;
+    color: $color-graphite;
+    margin-bottom: $spacing-lg;
+    font-weight: 400;
+
+    @include respond-to(md) {
+      font-size: 1.25rem;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// ============================================================================
+// Skills Section
+// ============================================================================
+
+.skills {
+  background: linear-gradient(180deg, $color-cream 0%, $color-ivory 100%);
+
+  @media (prefers-color-scheme: dark) {
+    background: linear-gradient(180deg, $color-ebony 0%, $color-charcoal-dark 100%);
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-xl;
+
+    @include respond-to(md) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: $spacing-xl * 1.5;
+    }
+  }
+}
+
+.skill-card {
+  @include elegant-card;
+  text-align: center;
+  padding: $spacing-xl;
+
+  &__title {
+    font-family: $font-serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: $spacing-lg;
+    color: $color-charcoal;
+    letter-spacing: -0.02em;
+  }
+
+  &__list {
+    list-style: none;
+    text-align: left;
+
+    li {
+      padding: $spacing-sm 0;
+      color: $color-graphite;
+      font-size: 1rem;
+      border-bottom: 1px solid $color-border;
+      position: relative;
+      padding-left: $spacing-md;
+      font-weight: 400;
+
+      &::before {
+        content: '→';
+        position: absolute;
+        left: 0;
+        color: $color-gold;
+        font-weight: 600;
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+// ============================================================================
+// Projects Section
+// ============================================================================
+
+.projects {
+  background: $color-ivory;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-xl;
+
+    @include respond-to(md) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: $spacing-xl * 1.5;
+    }
+  }
+}
+
+.project-card {
+  @include elegant-card;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: $spacing-xl;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, $color-gold, $color-indigo);
+    opacity: 0;
+    transition: opacity $transition-smooth;
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
+
+  &__header {
+    margin-bottom: $spacing-md;
+  }
+
+  &__title {
+    font-family: $font-serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: $spacing-md;
+    color: $color-charcoal;
+    letter-spacing: -0.02em;
+  }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-xs;
+    margin-bottom: $spacing-md;
+
+    span {
+      padding: $spacing-xs $spacing-md;
+      background: linear-gradient(135deg, $color-gold-light, rgba(212, 175, 55, 0.1));
+      color: $color-slate;
+      border-radius: $border-radius-sm;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border: 1px solid rgba(212, 175, 55, 0.2);
+    }
+  }
+
+  &__description {
+    flex: 1;
+    color: $color-graphite;
+    line-height: 1.8;
+    margin-bottom: $spacing-lg;
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  &__footer {
+    margin-top: auto;
+    padding-top: $spacing-md;
+    border-top: 1px solid $color-border;
+  }
+
+  &__link {
+    color: $color-indigo;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-xs;
+    transition: $transition-fast;
+    letter-spacing: 0.02em;
+
+    &:hover {
+      color: $color-indigo-light;
+      gap: $spacing-sm;
+    }
+  }
+}
+
+// ============================================================================
+// Contact Section
+// ============================================================================
+
+.contact {
+  background: linear-gradient(135deg, $color-navy-dark 0%, $color-navy 100%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .section__title {
+    color: white;
+
+    &::after {
+      background: linear-gradient(90deg, $color-gold, rgba(255, 255, 255, 0.5));
+    }
+  }
+
+  &__content {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__text {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: $spacing-xl;
+    line-height: 1.8;
+    font-weight: 400;
+
+    @include respond-to(md) {
+      font-size: 1.25rem;
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+    align-items: center;
+
+    @include respond-to(md) {
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+    color: white;
+    text-decoration: none;
+    padding: $spacing-md $spacing-xl;
+    border-radius: $border-radius-md;
+    transition: all $transition-smooth;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-weight: 500;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+// ============================================================================
+// Footer
+// ============================================================================
+
+.footer {
+  margin-top: auto;
+  padding: $spacing-xl $spacing-md;
+  background: $color-charcoal;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+  @include respond-to(md) {
+    padding: $spacing-xl;
+  }
+
+  &__text {
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+  }
+}
+
+// ============================================================================
+// Dark Theme
+// ============================================================================
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: $color-ebony;
+    color: $color-platinum-dark;
+  }
+
+  .nav__logo,
+  .section__title,
+  .skill-card__title,
+  .project-card__title {
+    color: $color-platinum-dark;
+  }
+
+  .hero__title {
+    background: linear-gradient(135deg, $color-platinum-dark 0%, $color-indigo-dark 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .nav__links a,
+  .hero__subtitle,
+  .about__text,
+  .skill-card__list li,
+  .project-card__description {
+    color: $color-platinum-dark;
+  }
+
+  .skill-card,
+  .project-card {
+    background: $color-charcoal-dark;
+    border-color: $color-border-dark;
+  }
+
+  .about {
+    background: $color-charcoal-dark;
+  }
+
+  .projects {
+    background: $color-charcoal-dark;
+  }
+
+  .project-card__tags span {
+    background: rgba(212, 175, 55, 0.15);
+    color: $color-gold-dark;
+    border-color: rgba(212, 175, 55, 0.3);
+  }
+}
+
+// ============================================================================
+// Accessibility
+// ============================================================================
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid $color-indigo;
+  outline-offset: 4px;
+  border-radius: $border-radius-sm;
+}
+
